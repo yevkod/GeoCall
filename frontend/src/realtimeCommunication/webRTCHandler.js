@@ -60,15 +60,16 @@ export const call = (data) => {
 };
 
 export const disconnect = () => {
+  console.log('peer',peer)
+  // for (let conns in peer.connections) {
+  //   console.log('conns',conns)
+  //   peer.connections[conns].forEach((c) => {
+  //     console.log("closing connections");
+  //     c.peerConnection.close();
 
-  for (let conns in peer.connections) {
-    peer.connections[conns].forEach((c) => {
-      console.log("closing connections");
-      c.peerConnection.close();
-
-      if (c.close) c.close();
-    });
-  }
+  //     if (c.close) c.close();
+  //   });
+  // }
 
 
   store.dispatch(setRemoteStream(null));
